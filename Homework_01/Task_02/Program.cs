@@ -8,11 +8,16 @@ Console.WriteLine("Enter second number");
 string numStr2 = Console.ReadLine();
 int num2 = Convert.ToInt32(numStr2);
 
-if (num1 > num2) {
+if (num1 > num2) 
+{
     Console.WriteLine($"max = {num1}");
-} else if (num2 > num1) {
+} 
+else if (num2 > num1) 
+{
    Console.WriteLine($"max = {num2}"); 
-} else {
+} 
+else 
+{
     Console.WriteLine("Numbers are equal");
 }
 
