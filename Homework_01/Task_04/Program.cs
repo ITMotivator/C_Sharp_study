@@ -15,7 +15,8 @@ if (num1 == num2 && num2 == num3)
 {
     Console.WriteLine("All numbers are equal");
 }
-else{
+else
+{
 int max = num1;
 if (num2 > max) 
 {
