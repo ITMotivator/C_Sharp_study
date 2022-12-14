@@ -1,7 +1,5 @@
-﻿// Задайте массив заполненный случайными положительными трёхзначными числами. 
-// Напишите программу, которая покажет количество чётных чисел в массиве.
-
-/*Метод получения числа с консоли*/
+﻿// Задайте одномерный массив, заполненный случайными числами. 
+// Найдите сумму элементов, стоящих на нечётных позициях.
 
 int GetSizeMassive(string message)
 {
@@ -28,26 +26,27 @@ int[] InitArray(int size)
     Random rnd = new Random();
     for (int i = 0; i < size; i++)
     {
-        arr[i] = rnd.Next(100, 1000);
+        arr[i] = rnd.Next(-100, 100);
     }
     return arr;
 }
 
-// Метод подсчета четных чисел в массиве
+// Метод подсчета суммы элементов, стоящих на нечётных позициях.
 
-int GetNumOfEvenNumbers(int[] array)
+int GetSumFromOddInd(int[] array)
 {
-    int count = 0;
+    int sum = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i] % 2 == 0)
+        if (i % 2 != 0)
         {
-            count++;
+            sum += array[i];
         }
     }
-    return count;
+    return sum;
 }
 
+// Вывод массива в консоль
 void PrintArraySign(int[] massiv)
 {
     for (int i = 0; i < massiv.Length; i++)
@@ -60,6 +59,6 @@ void PrintArraySign(int[] massiv)
 
 int number = GetSizeMassive("Введите размерность массива: ");
 int[] newArr = InitArray(number);
-int evenCount = GetNumOfEvenNumbers(newArr);
+int result = GetSumFromOddInd(newArr);
 PrintArraySign(newArr);
-Console.WriteLine($"В массиве четных чисел: {evenCount}");
+Console.WriteLine($"Сумма искомых чисел: {result}");
