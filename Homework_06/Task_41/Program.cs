@@ -6,7 +6,7 @@ int GetNumbers(string message)
     int result;
     while (true)
     {
-        Console.Write(message);
+        Console.WriteLine(message);
         if (int.TryParse(Console.ReadLine(), out result))
         {
             break;
